@@ -34,14 +34,15 @@ public class Home extends AppCompatActivity {
         call.enqueue(new Callback<PLModel>() {
             @Override
             public void onResponse(Call<PLModel> call, Response<PLModel> response) {
-                Log.e(TAG, "onResponse: code : " + response.code());
-                ArrayList<PLModel.seasons> seasons = response.body().getSeasons();
+//                Log.e(TAG, "onResponse: code : " + response.code());
+                Log.e(TAG, "onResponse: code : " + response.body().getName());
 
-                for (PLModel.seasons seasons1 : seasons)
-                {
-                    Log.e(TAG, "onResponse: winner : " + seasons1.getWinner() );
-                }
 
+//                ArrayList<PLModel.seasons> seasons = response.body().getSeasons();
+//                for (PLModel.seasons seasons1 : seasons)
+//                {
+//                    Log.e(TAG, "onResponse: startDate : " + seasons1.getStartDate() );
+//                }
             }
 
             @Override
@@ -51,7 +52,5 @@ public class Home extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
