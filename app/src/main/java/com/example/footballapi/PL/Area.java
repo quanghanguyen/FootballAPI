@@ -1,9 +1,9 @@
-package com.example.footballapi;
+package com.example.footballapi.PL;
 
-public class HomeTeam {
+public class Area {
 
     private float id;
-    private float name;
+    private String name;
 
     public float getId() {
         return id;
@@ -13,11 +13,11 @@ public class HomeTeam {
         this.id = id;
     }
 
-    public float getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(float name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

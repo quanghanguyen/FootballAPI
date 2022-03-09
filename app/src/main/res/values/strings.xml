@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">FootballAPI</string>
+    <string name="home">HOME</string>
+    
+    <string name="PL">Premier League</string>
+    <string name="startDate">Start Date: </string>
+    <string name="endDate">End Date: </string>
+    <string name="matchday">Matchday: </string>
+    <string name="matchdayNumber">28</string>
+
+    <string name="sDate">2021-08-13</string>
+    <string name="eDate">2022-05-22</string>
 </resources>

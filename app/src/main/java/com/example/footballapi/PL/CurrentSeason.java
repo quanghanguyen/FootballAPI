@@ -1,11 +1,12 @@
-package com.example.footballapi;
+package com.example.footballapi.PL;
 
-public class Season {
+public class CurrentSeason {
 
     private float id;
     private String startDate;
     private String endDate;
-    private float currentMatchday;
+    private String currentMatchday;
+    private String winner;
 
     public float getId() {
         return id;
@@ -31,11 +32,19 @@ public class Season {
         this.endDate = endDate;
     }
 
-    public float getCurrentMatchday() {
+    public String getCurrentMatchday() {
         return currentMatchday;
     }
 
-    public void setCurrentMatchday(float currentMatchday) {
+    public void setCurrentMatchday(String currentMatchday) {
         this.currentMatchday = currentMatchday;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
     }
 }
