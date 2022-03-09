@@ -1,6 +1,7 @@
 package com.example.footballapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -20,11 +21,15 @@ import retrofit2.Response;
 public class Home extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        recyclerView = (RecyclerView) findViewById(R.id.rcvData);
+        //recyclerView.setAdapter();
 
         getSupportActionBar().hide();
 
@@ -34,9 +39,16 @@ public class Home extends AppCompatActivity {
         call.enqueue(new Callback<PLModel>() {
             @Override
             public void onResponse(Call<PLModel> call, Response<PLModel> response) {
-//                Log.e(TAG, "onResponse: code : " + response.code());
                 Log.e(TAG, "onResponse: code : " + response.body().getName());
 
+
+                // Làm sao để mình có thể lấy được Data mục shortname ở trong class Winner?
+                //------------
+                //------------
+                //------------
+
+
+                // Cú pháp để lấy Data ở trong Json Array
 
 //                ArrayList<PLModel.seasons> seasons = response.body().getSeasons();
 //                for (PLModel.seasons seasons1 : seasons)
