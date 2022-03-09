@@ -8,6 +8,14 @@ public class CurrentSeason {
     private String currentMatchday;
     private String winner;
 
+    public CurrentSeason(float id, String startDate, String endDate, String currentMatchday, String winner) {
+        this.id = id;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.currentMatchday = currentMatchday;
+        this.winner = winner;
+    }
+
     public float getId() {
         return id;
     }

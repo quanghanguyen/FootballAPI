@@ -40,8 +40,9 @@ public class Home extends AppCompatActivity {
             @Override
             public void onResponse(Call<PLModel> call, Response<PLModel> response) {
                 Log.e(TAG, "onResponse: code : " + response.body().getName());
-
-
+                Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getStartDate());
+                Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
+                Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
                 // Làm sao để mình có thể lấy được Data mục shortname ở trong class Winner?
                 //------------
                 //------------
