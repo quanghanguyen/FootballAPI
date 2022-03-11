@@ -26,20 +26,22 @@ public class Home extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
 
-    private RecyclerView rcvData;
-    private ArrayList<PLModel> arrayList;
-    private RecyclerAdapter recyclerAdapter;
-    private ProgressBar pb;
-
+    RecyclerView recyclerView;
+    Adaptery adaptery;
+    List<PLModel> plModelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        rcvData = (RecyclerView) findViewById(R.id.rcvData);
-        pb = (ProgressBar) findViewById(R.id.progressBar);
-        arrayList = new ArrayList<>();
+        plModelList = new ArrayList<>();
+
+        recyclerView = (RecyclerView)findViewById(R.id.rcvData);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        adaptery = new Adaptery(getApplicationContext(), plModelList);
+        recyclerView.setAdapter(adaptery);
 
 
 
@@ -51,33 +53,27 @@ public class Home extends AppCompatActivity {
         call.enqueue(new Callback<PLModel>() {
             @Override
             public void onResponse(Call<PLModel> call, Response<PLModel> response) {
+
+
                 Log.e(TAG, "onResponse: code : " + response.body().getName());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getStartDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
-
-//                arrayList.add(new PLModel(data1.getFirst_name(), data1.getEmail()));
-                arrayList.add(new PLModel())
-
-                rcvData.setLayoutManager(new LinearLayoutManager(Home.this));
-                //here
-                recyclerAdapter = new RecyclerAdapter(arrayList);
-                rcvData.setAdapter(recyclerAdapter);
-                
 
                 // Làm sao để mình có thể lấy được Data mục shortname ở trong class Winner?
                 //------------
                 //------------
                 //------------
 
-
                 // Cú pháp để lấy Data ở trong Json Array
-
 //                ArrayList<PLModel.seasons> seasons = response.body().getSeasons();
 //                for (PLModel.seasons seasons1 : seasons)
 //                {
 //                    Log.e(TAG, "onResponse: startDate : " + seasons1.getStartDate() );
 //                }
+
+
+
             }
 
             @Override
