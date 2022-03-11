@@ -28,7 +28,7 @@ public class Home extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Adaptery adaptery;
-    List<PLModel> plModelList;
+    ArrayList<PLModel> plModelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,12 +60,16 @@ public class Home extends AppCompatActivity {
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
 
-                // Làm sao để mình có thể lấy được Data mục shortname ở trong class Winner?
-                //------------
-                //------------
-                //------------
 
-                // Cú pháp để lấy Data ở trong Json Array
+
+                plModelList.add(new PLModel.)
+
+
+
+
+
+
+                // Cú pháp để lấy Data ở trong Json Array?
 //                ArrayList<PLModel.seasons> seasons = response.body().getSeasons();
 //                for (PLModel.seasons seasons1 : seasons)
 //                {
