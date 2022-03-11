@@ -1,11 +1,17 @@
 package com.example.footballapi.PL;
 
-public class CurrentSeason {
+import com.google.gson.annotations.SerializedName;
 
+public class CurrentSeason {
+    @SerializedName("id")
     private float id;
+    @SerializedName("startDate")
     private String startDate;
+    @SerializedName("endDate")
     private String endDate;
+    @SerializedName("currentMatchday")
     private String currentMatchday;
+    @SerializedName("winner")
     private String winner;
 
     public CurrentSeason(float id, String startDate, String endDate, String currentMatchday, String winner) {

@@ -38,11 +38,6 @@ public class Home extends AppCompatActivity {
         plModelList = new ArrayList<>();
 
         recyclerView = (RecyclerView)findViewById(R.id.rcvData);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        adaptery = new Adaptery(getApplicationContext(), plModelList);
-        recyclerView.setAdapter(adaptery);
-
 
 
         getSupportActionBar().hide();
@@ -60,21 +55,11 @@ public class Home extends AppCompatActivity {
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
 
+                plModelList.add(response.body().);
 
-
-                plModelList.add(new PLModel.)
-
-
-
-
-
-
-                // Cú pháp để lấy Data ở trong Json Array?
-//                ArrayList<PLModel.seasons> seasons = response.body().getSeasons();
-//                for (PLModel.seasons seasons1 : seasons)
-//                {
-//                    Log.e(TAG, "onResponse: startDate : " + seasons1.getStartDate() );
-//                }
+                recyclerView.setLayoutManager(new LinearLayoutManager(Home.this));
+                adaptery = new Adaptery(Home.this, plModelList);
+                recyclerView.setAdapter(adaptery);
 
 
 
