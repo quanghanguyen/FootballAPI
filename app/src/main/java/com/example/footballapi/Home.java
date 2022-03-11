@@ -19,6 +19,7 @@ import com.example.footballapi.L1.ApiService2;
 import com.example.footballapi.PL.ApiService;
 import com.example.footballapi.PL.PLModel;
 import com.example.footballapi.PL.RetrofitClient;
+import com.example.footballapi.SA.ApiService4;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,6 +55,13 @@ public class Home extends AppCompatActivity {
     private TextView tvmatchDate2;
     private CardView cvBL;
 
+    //SA
+    private TextView tvSAName;
+    private TextView tvstartDate3;
+    private TextView tvendDate3;
+    private TextView tvmatchDate3;
+    private CardView cvSA;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,13 +90,51 @@ public class Home extends AppCompatActivity {
         tvmatchDate2 = (TextView) findViewById(R.id.tvmatchDay2);
         cvBL = (CardView) findViewById(R.id.cvL1);
 
+        //SA
+        tvSAName = (TextView) findViewById(R.id.tvNameSA);
+        tvstartDate3 = (TextView) findViewById(R.id.tvstartDate3);
+        tvendDate3 = (TextView) findViewById(R.id.tvendDate3) ;
+        tvmatchDate3 = (TextView) findViewById(R.id.tvmatchDay3);
+        cvSA = (CardView) findViewById(R.id.cvSA);
+
         //-------------------------------------------------------------------------------------
         
         PLcall();
         L1call();
         BLcall();
+        SAcall();
 
 //        click();
+
+    }
+
+    private void SAcall() {
+
+        ApiService4 apiService4 = RetrofitClient.getRetrofitInstance().create(ApiService4.class);
+        Call<PLModel> callSA = apiService4.getAllDataL3();
+
+        callSA.enqueue(new Callback<PLModel>() {
+            @Override
+            public void onResponse(Call<PLModel> call, Response<PLModel> response) {
+                Log.e(TAG, "onResponse: code : " + response.body().getName());
+                Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getStartDate());
+                Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
+                Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
+
+                PLModel plModel = response.body();
+
+                tvSAName.setText(plModel.getName());
+                tvstartDate3.setText(plModel.getCurrentSeason().getStartDate());
+                tvendDate3.setText(plModel.getCurrentSeason().getEndDate());
+                tvmatchDate3.setText(plModel.getCurrentSeason().getCurrentMatchday());
+
+            }
+
+            @Override
+            public void onFailure(Call<PLModel> call, Throwable t) {
+
+            }
+        });
 
     }
 
@@ -99,7 +145,7 @@ public class Home extends AppCompatActivity {
 
         callBL.enqueue(new Callback<PLModel>() {
             @Override
-            public void onResponse(Call<PLModel> call, Response<PLModel> response) {
+            public void onResponse(Call<PLModel> callSA, Response<PLModel> response) {
 
                 Log.e(TAG, "onResponse: code : " + response.body().getName());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getStartDate());
