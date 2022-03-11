@@ -1,14 +1,17 @@
 package com.example.footballapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.footballapi.PL.ApiService;
 import com.example.footballapi.PL.PLModel;
@@ -25,22 +28,32 @@ import retrofit2.Response;
 public class Home extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
-
-    RecyclerView recyclerView;
-    Adaptery adaptery;
-    ArrayList<PLModel> plModelList;
+    private ProgressBar progressBar;
+    private TextView tvPLName;
+    private TextView tvstartDate;
+    private TextView tvendDate;
+    private TextView tvmatchDay;
+    private CardView cvPL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        plModelList = new ArrayList<>();
-
-        recyclerView = (RecyclerView)findViewById(R.id.rcvData);
-
-
         getSupportActionBar().hide();
+
+        tvPLName = (TextView) findViewById(R.id.tvNamePL);
+        tvstartDate = (TextView) findViewById(R.id.tvstartDate);
+        tvendDate = (TextView) findViewById(R.id.tvendDate);
+        tvmatchDay = (TextView) findViewById(R.id.tvmatchDay);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        cvPL = (CardView) findViewById(R.id.cvPL);
+        
+        PLcall();
+
+    }
+
+    private void PLcall() {
 
         ApiService apiService = RetrofitClient.getRetrofitInstance().create(ApiService.class);
         Call<PLModel> call = apiService.getAllData();
@@ -55,13 +68,16 @@ public class Home extends AppCompatActivity {
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
 
-                plModelList.add(response.body().);
+                //plModelList.add(response.body().);
+                PLModel plModel = response.body();
 
-                recyclerView.setLayoutManager(new LinearLayoutManager(Home.this));
-                adaptery = new Adaptery(Home.this, plModelList);
-                recyclerView.setAdapter(adaptery);
+                tvPLName.setText(plModel.getName());
+                tvstartDate.setText(plModel.getCurrentSeason().getStartDate());
+                tvendDate.setText(plModel.getCurrentSeason().getEndDate());
+                tvmatchDay.setText(plModel.getCurrentSeason().getCurrentMatchday());
 
-
+                progressBar.setVisibility(View.GONE);
+                cvPL.setVisibility(View.VISIBLE);
 
             }
 
@@ -72,5 +88,12 @@ public class Home extends AppCompatActivity {
 
             }
         });
+
     }
+
+
+    //
+    
+    
+    
 }
