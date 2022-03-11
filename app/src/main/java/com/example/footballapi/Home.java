@@ -1,18 +1,22 @@
 package com.example.footballapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 
 import com.example.footballapi.PL.ApiService;
 import com.example.footballapi.PL.PLModel;
 import com.example.footballapi.PL.RetrofitClient;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,15 +25,23 @@ import retrofit2.Response;
 public class Home extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
-    private RecyclerView recyclerView;
+
+    private RecyclerView rcvData;
+    private ArrayList<PLModel> arrayList;
+    private RecyclerAdapter recyclerAdapter;
+    private ProgressBar pb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        recyclerView = (RecyclerView) findViewById(R.id.rcvData);
-        //recyclerView.setAdapter();
+        rcvData = (RecyclerView) findViewById(R.id.rcvData);
+        pb = (ProgressBar) findViewById(R.id.progressBar);
+        arrayList = new ArrayList<>();
+
+
 
         getSupportActionBar().hide();
 
@@ -43,6 +55,14 @@ public class Home extends AppCompatActivity {
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getStartDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getEndDate());
                 Log.e(TAG, "onResponse: code : " + response.body().getCurrentSeason().getCurrentMatchday());
+
+//                arrayList.add(new PLModel(data1.getFirst_name(), data1.getEmail()));
+                arrayList.add(new PLModel())
+
+                rcvData.setLayoutManager(new LinearLayoutManager(Home.this));
+                //here
+                recyclerAdapter = new RecyclerAdapter(arrayList);
+                rcvData.setAdapter(recyclerAdapter);
                 
 
                 // Làm sao để mình có thể lấy được Data mục shortname ở trong class Winner?
