@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.footballapi.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -17,6 +18,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     private List<Data> dataList;
+    public DataAdapter(ArrayList<Data> dataList){
+        this.dataList = dataList;
+    }
 
     public DataAdapter(List<Data> dataList) {
         this.dataList = dataList;
@@ -35,8 +39,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
-        holder.civTeams
+        Data data = dataList.get(position);
+        //holder.tvTeams.setText();
 
 
     }
