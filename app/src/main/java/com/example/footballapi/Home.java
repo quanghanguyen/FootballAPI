@@ -19,7 +19,9 @@ import com.example.footballapi.L1.ApiService2;
 import com.example.footballapi.PL.ApiService;
 import com.example.footballapi.PL.PLModel;
 import com.example.footballapi.PL.RetrofitClient;
+import com.example.footballapi.PL.pagerPL;
 import com.example.footballapi.SA.ApiService4;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +34,9 @@ import retrofit2.Response;
 public class Home extends AppCompatActivity {
 
     private static final String TAG = "HomeActivity";
-//    private ProgressBar progressBar;
+
+    private ProgressBar progressBar;
+    private TextView tvHome;
 
     //PL
     private TextView tvPLName;
@@ -68,13 +72,17 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
 
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        tvHome = (TextView) findViewById(R.id.tvHome);
+
         //PL
         tvPLName = (TextView) findViewById(R.id.tvNamePL);
         tvstartDate = (TextView) findViewById(R.id.tvstartDate);
         tvendDate = (TextView) findViewById(R.id.tvendDate);
         tvmatchDay = (TextView) findViewById(R.id.tvmatchDay);
         cvPL = (CardView) findViewById(R.id.cvPL);
-//        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
 
         //L1
         tvL1Name = (TextView) findViewById(R.id.tvNameL1);
@@ -88,7 +96,7 @@ public class Home extends AppCompatActivity {
         tvstartDate2 = (TextView) findViewById(R.id.tvstartDate2);
         tvendDate2 = (TextView) findViewById(R.id.tvendDate2) ;
         tvmatchDate2 = (TextView) findViewById(R.id.tvmatchDay2);
-        cvBL = (CardView) findViewById(R.id.cvL1);
+        cvBL = (CardView) findViewById(R.id.cvBL);
 
         //SA
         tvSAName = (TextView) findViewById(R.id.tvNameSA);
@@ -104,7 +112,8 @@ public class Home extends AppCompatActivity {
         BLcall();
         SAcall();
 
-//        click();
+        //set on click
+        clickPL();
 
     }
 
@@ -201,16 +210,6 @@ public class Home extends AppCompatActivity {
 
     }
 
-//    private void click() {
-//
-//        cvPL.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Home.this, Demo.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
 
     private void PLcall() {
 
@@ -235,8 +234,15 @@ public class Home extends AppCompatActivity {
                 tvendDate.setText(plModel.getCurrentSeason().getEndDate());
                 tvmatchDay.setText(plModel.getCurrentSeason().getCurrentMatchday());
 
-//                progressBar.setVisibility(View.GONE);
-//                cvPL.setVisibility(View.VISIBLE);
+                // Progressbar khi load data
+
+                progressBar.setVisibility(View.GONE);
+                tvHome.setVisibility(View.VISIBLE);
+                cvPL.setVisibility(View.VISIBLE);
+                cvL1.setVisibility(View.VISIBLE);
+                cvBL.setVisibility(View.VISIBLE);
+                cvSA.setVisibility(View.VISIBLE);
+
 
             }
 
@@ -248,5 +254,17 @@ public class Home extends AppCompatActivity {
             }
         });
 
+    }
+
+    //ste on click
+        private void clickPL() {
+
+        cvPL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, pagerPL.class);
+                startActivity(intent);
+            }
+        });
     }
 }
