@@ -3,12 +3,22 @@ package com.example.footballapi.PL;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.footballapi.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,6 +58,13 @@ public class TeamFragment extends Fragment {
         return fragment;
     }
 
+    private RecyclerView recyclerView;
+    private LinearLayoutManager linearLayoutManager;
+    private DataAdapter dataAdapter;
+    private List<Data> dataList = new ArrayList<>();
+
+    private static final String TAG = "HomeActivity";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +78,40 @@ public class TeamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_team, container, false);
+        View view = inflater.inflate(R.layout.fragment_team, container, false);
+
+        recyclerView = view.findViewById(R.id.rcvTeams);
+        linearLayoutManager = new LinearLayoutManager(TeamFragment.this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        dataAdapter = new DataAdapter(dataList);
+        recyclerView.setAdapter(dataAdapter);
+        return view;
+
+        fetchData();
     }
+
+    private void fetchData() {
+
+        APIInterface apiInterface = RetrofitClient.getRetrofitInstance().create(APIInterface.class);
+        Call<List<Data>> callTeams = apiInterface.getDetailData();
+
+        callTeams.enqueue(new Callback<List<Data>>() {
+            @Override
+            public void onResponse(Call<List<Data>> call, Response<List<Data>> response) {
+                Log.e(TAG, "onResponse: code : " + response.code());
+                ArrayList<Data> data = response.body().get
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Data>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+
 }
