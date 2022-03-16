@@ -12,6 +12,8 @@ public interface APIInterface {
 
     @Headers("X-Auth-Token: 161d94ea5ccd478596a33f51876bd457")
     @GET("v2/competitions/2021/teams")
-    Call<List<Data>> getDetailData();
+    Call<FetchUserResponse> getDetailData();
+
+
 
 }

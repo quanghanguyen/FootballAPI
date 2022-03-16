@@ -6,9 +6,10 @@ import java.util.ArrayList;
 
 public class Data {
 
-    @SerializedName("teams")
+    @SerializedName("name")
     private String name;
-    @SerializedName("cresUrl")
+
+    @SerializedName("crestUrl")
     private String crestUrl;
 
     public Data(String name, String crestUrl) {
