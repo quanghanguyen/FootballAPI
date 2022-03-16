@@ -99,7 +99,11 @@ public class TeamFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Data>> call, Response<List<Data>> response) {
                 Log.e(TAG, "onResponse: code : " + response.code());
-                ArrayList<Data> data = response.body().get
+                Log.e(TAG, "onResponse: data " + response.);
+                ArrayList<Data> data = response.body().getDa;
+
+
+
 
 
 
