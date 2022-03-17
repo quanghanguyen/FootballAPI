@@ -57,40 +57,40 @@ public class TeamFragment extends Fragment {
 
         arrayList = new ArrayList<>();
 
-        fetchData();
+//        fetchData();
 
     }
 
-    private void fetchData() {
-
-        APIInterface apiInterface = RetrofitClient.getRetrofitInstance().create(APIInterface.class);
-        Call<FetchUserResponse> callTeams = apiInterface.getDetailData();
-
-        callTeams.enqueue(new Callback<FetchUserResponse>() {
-            @Override
-            public void onResponse(Call<FetchUserResponse> call, Response<FetchUserResponse> response) {
-
-                Log.e(TAG, "onResponse: code : " + response.code());
-
-                ArrayList<Data> data = response.body().getTeams();
-
-                for (Data data1 : data){
-                    Log.e(TAG, "onResponse: code: " + data1.getName());
-                    Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
-
-                    arrayList.add(new Data(data1.getName(), data1.getCrestUrl()));
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<FetchUserResponse> call, Throwable t) {
-
-                //Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-    }
+//    private void fetchData() {
+//
+//        APIInterface apiInterface = RetrofitClient.getRetrofitInstance().create(APIInterface.class);
+//        Call<FetchUserResponse> callTeams = apiInterface.getDetailData();
+//
+////        callTeams.enqueue(new Callback<FetchUserResponse>() {
+////            @Override
+////            public void onResponse(Call<FetchUserResponse> call, Response<FetchUserResponse> response) {
+////
+////                Log.e(TAG, "onResponse: code : " + response.code());
+////
+////                ArrayList<Data> data = response.body().getTeams();
+////
+////                for (Data data1 : data){
+////                    Log.e(TAG, "onResponse: code: " + data1.getName());
+////                    Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
+////
+////                    arrayList.add(new Data(data1.getName(), data1.getCrestUrl()));
+////                }
+////
+////            }
+////
+////            @Override
+////            public void onFailure(Call<FetchUserResponse> call, Throwable t) {
+////
+////                //Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+////
+////            }
+//        });
+//
+//    }
 
 }

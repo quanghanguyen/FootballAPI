@@ -1,6 +1,7 @@
 package com.example.footballapi.PL;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,16 @@ import com.example.footballapi.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class FragmentTeam2 extends Fragment {
 
     View v;
     private RecyclerView myrecyclerview;
     private List<Data> lstData;
+    private static final String TAG = "TeamFragment";
 
     public FragmentTeam2() {
     }
@@ -41,12 +47,45 @@ public class FragmentTeam2 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        lstData = new ArrayList<>();
-        lstData.add(new Data("MU", "1222"));
-        lstData.add(new Data("MU", "1222"));
-        lstData.add(new Data("MU", "1222"));
-        lstData.add(new Data("MU", "1222"));
-        lstData.add(new Data("MU", "1222"));
+//        lstData = new ArrayList<>();
+//        lstData.add(new Data("MU", "1222"));
+//        lstData.add(new Data("MU", "1222"));
+//        lstData.add(new Data("MU", "1222"));
+//        lstData.add(new Data("MU", "1222"));
+//        lstData.add(new Data("MU", "1222"));
+
+        demoCall();
+
+    }
+
+    private void demoCall() {
+
+        APIInterface apiInterface = RetrofitClient.getRetrofitInstance().create(APIInterface.class);
+        Call<FetchUserResponse> callTeams = apiInterface.getDetailData();
+
+        callTeams.enqueue(new Callback<FetchUserResponse>() {
+            @Override
+            public void onResponse(Call<FetchUserResponse> call, Response<FetchUserResponse> response) {
+
+                Log.e(TAG, "onResponse: code : " + response.code());
+
+                ArrayList<Data> data = response.body().getTeams();
+
+                for (Data data1 : data){
+                    Log.e(TAG, "onResponse: code: " + data1.getName());
+                    Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
+
+                    lstData.add(new Data(data1.getName(), data1.getCrestUrl()));
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<FetchUserResponse> call, Throwable t) {
+
+                //Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+
+            }
 
     }
 }
