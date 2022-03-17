@@ -58,6 +58,7 @@ public class TeamFragment extends Fragment {
         arrayList = new ArrayList<>();
 
         fetchData();
+
     }
 
     private void fetchData() {
@@ -77,7 +78,7 @@ public class TeamFragment extends Fragment {
                     Log.e(TAG, "onResponse: code: " + data1.getName());
                     Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
 
-//                    arrayList.add(new Data(data1.getName(), data1.getCrestUrl()));
+                    arrayList.add(new Data(data1.getName(), data1.getCrestUrl()));
                 }
 
             }
@@ -91,6 +92,5 @@ public class TeamFragment extends Fragment {
         });
 
     }
-
 
 }

@@ -1,6 +1,7 @@
 package com.example.footballapi.PL;
 
 import android.content.Context;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,10 +33,17 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View inflate = layoutInflater.inflate(R.layout.list_teams,null);
-        ViewHolder viewHolder = new ViewHolder(inflate);
-        return viewHolder;
+//        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+//        View inflate = layoutInflater.inflate(R.layout.list_teams,null);
+//        ViewHolder viewHolder = new ViewHolder(inflate);
+//        return viewHolder;
+
+        View v;
+        v = LayoutInflater.from(context).inflate(R.layout.list_teams, parent, false);
+        ViewHolder VHolder = new ViewHolder(v);
+        return  VHolder;
+
+
     }
 
     @Override

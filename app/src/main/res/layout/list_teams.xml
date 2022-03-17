@@ -13,27 +13,27 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/civTeams"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/img_1"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="15dp"/>
+                android:layout_marginStart="15dp"
+                android:src="@drawable/img_1" />
 
             <TextView
                 android:id="@+id/tvTeams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:text="@string/matchday"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/civTeams"
                 android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/civTeams"
+                android:text="@string/matchday"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.footballapi.BL.ApiService3;
 import com.example.footballapi.L1.ApiService2;
 import com.example.footballapi.PL.ApiService;
+import com.example.footballapi.PL.Home2;
 import com.example.footballapi.PL.PLModel;
 import com.example.footballapi.PL.RetrofitClient;
 import com.example.footballapi.PL.pagerPL;
@@ -262,7 +263,7 @@ public class Home extends AppCompatActivity {
         cvPL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, pagerPL.class);
+                Intent intent = new Intent(Home.this, Home2.class);
                 startActivity(intent);
             }
         });
