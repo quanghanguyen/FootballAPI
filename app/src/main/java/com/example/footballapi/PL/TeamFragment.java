@@ -26,31 +26,36 @@ import retrofit2.Response;
 
 public class TeamFragment extends Fragment {
 
-
+    private static final String TAG = "TeamFragment";
     private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
-    private DataAdapter dataAdapter;
-    private List<Data> dataList;
+    private ArrayList<Data> arrayList;
+//    private DataAdapter recyclerAdapter;
+    private View v;
 
-    private static final String TAG = "HomeActivity";
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_team, container, false);
-
+    public TeamFragment() {
 
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        recyclerView = view.findViewById(R.id.rcvTeams);
-        recyclerView.setHasFixedSize(true);
+        v = inflater.inflate(R.layout.list_teams, container, false);
+        recyclerView = (RecyclerView) v.findViewById(R.id.rcvTeams);
+        DataAdapter dataAdapter = new DataAdapter(arrayList, getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(dataAdapter);
+        return v;
+
+    }
+
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        arrayList = new ArrayList<>();
 
         fetchData();
     }
@@ -64,8 +69,16 @@ public class TeamFragment extends Fragment {
             @Override
             public void onResponse(Call<FetchUserResponse> call, Response<FetchUserResponse> response) {
 
-                dataList = response.body().getDataList();
-                recyclerView.setAdapter(new DataAdapter(getActivity(), dataList));
+                Log.e(TAG, "onResponse: code : " + response.code());
+
+                ArrayList<Data> data = response.body().getTeams();
+
+                for (Data data1 : data){
+                    Log.e(TAG, "onResponse: code: " + data1.getName());
+                    Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
+
+//                    arrayList.add(new Data(data1.getName(), data1.getCrestUrl()));
+                }
 
             }
 

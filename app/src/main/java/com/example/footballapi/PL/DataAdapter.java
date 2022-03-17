@@ -20,29 +20,20 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
-    private List<Data> dataList;
+    private ArrayList<Data> arrayList;
     private Context context;
 
-    public DataAdapter(ArrayList<Data> dataList){
-        this.dataList = dataList;
-
-    }
-
-    public DataAdapter(FragmentActivity activity, List<Data> dataList) {
-        this.dataList = dataList;
+    public DataAdapter(ArrayList<Data> arrayList, Context context) {
+        this.arrayList = arrayList;
         this.context = context;
     }
-
-
-
-
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View inflate = layoutInflater.inflate(R.layout.list_teams, null);
+        View inflate = layoutInflater.inflate(R.layout.list_teams,null);
         ViewHolder viewHolder = new ViewHolder(inflate);
         return viewHolder;
     }
@@ -50,20 +41,18 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Data data = dataList.get(position);
+        Data data = arrayList.get(position);
 
         holder.tvTeams.setText(data.getName());
 
         Glide.with(context)
-            .load(dataList.get(position).getCrestUrl())
+            .load(arrayList.get(position).getCrestUrl())
             .into(holder.civTeams);
-
-
     }
 
     @Override
     public int getItemCount() {
-        return dataList.size();
+        return arrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

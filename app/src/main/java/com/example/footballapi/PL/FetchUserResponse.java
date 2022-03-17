@@ -2,22 +2,23 @@ package com.example.footballapi.PL;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FetchUserResponse {
 
-    @SerializedName("data")
-    List<Data> dataList;
+    @SerializedName("teams")
+    private ArrayList<Data> teams;
 
-    public FetchUserResponse(List<Data> dataList) {
-        this.dataList = dataList;
+    public FetchUserResponse(ArrayList<Data> teams) {
+        this.teams = teams;
     }
 
-    public List<Data> getDataList() {
-        return dataList;
+    public ArrayList<Data> getTeams() {
+        return teams;
     }
 
-    public void setDataList(List<Data> dataList) {
-        this.dataList = dataList;
+    public void setTeams(ArrayList<Data> teams) {
+        this.teams = teams;
     }
 }
