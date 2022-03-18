@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.footballapi.R;
 
 import org.w3c.dom.Text;
@@ -42,9 +43,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.tvName2.setText(mData.get(position).getName());
-        holder.civTeams2.
 
         // Load ảnh bằng Glide
+                Glide.with(mContext)
+                .load(mData.get(position).getCrestUrl())
+                .into(holder.civTeams2);
 
     }
 

@@ -47,7 +47,7 @@ public class FragmentTeam2 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        lstData = new ArrayList<>();
+        lstData = new ArrayList<>();
 //        lstData.add(new Data("MU", "1222"));
 //        lstData.add(new Data("MU", "1222"));
 //        lstData.add(new Data("MU", "1222"));
@@ -75,7 +75,7 @@ public class FragmentTeam2 extends Fragment {
                     Log.e(TAG, "onResponse: code: " + data1.getName());
                     Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
 
-//                    lstData.add(new Data(data1.getName(), data1.getCrestUrl()));
+                    lstData.add(new Data(data1.getName(), data1.getCrestUrl()));
                 }
 
             }
