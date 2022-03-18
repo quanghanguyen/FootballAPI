@@ -42,6 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.tvName2.setText(mData.get(position).getName());
+        holder.civTeams2.
 
         // Load ảnh bằng Glide
 

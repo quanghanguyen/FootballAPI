@@ -75,7 +75,7 @@ public class FragmentTeam2 extends Fragment {
                     Log.e(TAG, "onResponse: code: " + data1.getName());
                     Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
 
-                    lstData.add(new Data(data1.getName(), data1.getCrestUrl()));
+//                    lstData.add(new Data(data1.getName(), data1.getCrestUrl()));
                 }
 
             }
@@ -86,6 +86,8 @@ public class FragmentTeam2 extends Fragment {
                 //Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
 
             }
+
+        });
 
     }
 }
