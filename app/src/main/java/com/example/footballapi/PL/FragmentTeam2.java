@@ -48,11 +48,11 @@ public class FragmentTeam2 extends Fragment {
         super.onCreate(savedInstanceState);
 
         lstData = new ArrayList<>();
-//        lstData.add(new Data("MU", "1222"));
-//        lstData.add(new Data("MU", "1222"));
-//        lstData.add(new Data("MU", "1222"));
-//        lstData.add(new Data("MU", "1222"));
-//        lstData.add(new Data("MU", "1222"));
+        lstData.add(new Data("MU", "1222"));
+        lstData.add(new Data("MC", "1222"));
+        lstData.add(new Data("CS", "1222"));
+        lstData.add(new Data("NS", "1222"));
+        lstData.add(new Data("WH", "1222"));
 
         demoCall();
 
@@ -75,7 +75,7 @@ public class FragmentTeam2 extends Fragment {
                     Log.e(TAG, "onResponse: code: " + data1.getName());
                     Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
 
-                    lstData.add(new Data(data1.getName(), data1.getCrestUrl()));
+
                 }
 
             }
