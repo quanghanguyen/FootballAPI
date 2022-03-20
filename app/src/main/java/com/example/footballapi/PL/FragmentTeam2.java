@@ -27,7 +27,7 @@ public class FragmentTeam2 extends Fragment {
     private RecyclerView myrecyclerview;
     private List<Data> lstData;
     private static final String TAG = "TeamFragment";
-
+    private RecyclerViewAdapter adapter;
     public FragmentTeam2() {
     }
 
@@ -37,9 +37,9 @@ public class FragmentTeam2 extends Fragment {
 
         v = inflater.inflate(R.layout.team2_fragment, container, false);
         myrecyclerview = (RecyclerView) v.findViewById(R.id.rcvTeams2);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), lstData);
+        adapter = new RecyclerViewAdapter(getContext(), lstData);
         myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        myrecyclerview.setAdapter(recyclerViewAdapter);
+        myrecyclerview.setAdapter(adapter);
         return v;
     }
 
@@ -48,11 +48,11 @@ public class FragmentTeam2 extends Fragment {
         super.onCreate(savedInstanceState);
 
         lstData = new ArrayList<>();
-        lstData.add(new Data("MU", "1222"));
-        lstData.add(new Data("MC", "1222"));
-        lstData.add(new Data("CS", "1222"));
-        lstData.add(new Data("NS", "1222"));
-        lstData.add(new Data("WH", "1222"));
+//        lstData.add(new Data("MU", "1222"));
+//        lstData.add(new Data("MC", "1222"));
+//        lstData.add(new Data("CS", "1222"));
+//        lstData.add(new Data("NS", "1222"));
+//        lstData.add(new Data("WH", "1222"));
 
         demoCall();
 
@@ -70,10 +70,12 @@ public class FragmentTeam2 extends Fragment {
                 Log.e(TAG, "onResponse: code : " + response.code());
 
                 ArrayList<Data> data = response.body().getTeams();
-
+                lstData.addAll(data);
+                adapter.notifyDataSetChanged();
                 for (Data data1 : data){
                     Log.e(TAG, "onResponse: code: " + data1.getName());
                     Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());
+
 
 
                 }

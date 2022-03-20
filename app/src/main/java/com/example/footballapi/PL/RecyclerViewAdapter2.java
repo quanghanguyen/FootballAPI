@@ -41,12 +41,12 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.tvPosition.setText(mInfo.get(position).getPosition());
+        holder.tvPosition.setText(String.valueOf(mInfo.get(position).getPosition()));
         holder.tvNameTeam.setText(mInfo.get(position).getTeam().getName());
-        holder.tvW.setText(mInfo.get(position).getWon());
-        holder.tvL.setText(mInfo.get(position).getLost());
-        holder.tvD.setText(mInfo.get(position).getDraw());
-        holder.tvP.setText(mInfo.get(position).getPoints());
+//        holder.tvW.setText(mInfo.get(position).getWon());
+//        holder.tvL.setText(mInfo.get(position).getLost());
+//        holder.tvD.setText(mInfo.get(position).getDraw());
+//        holder.tvP.setText(mInfo.get(position).getPoints());
 
         Glide.with(mContext)
                 .load(mInfo.get(position).getTeam().getCrestUrl())

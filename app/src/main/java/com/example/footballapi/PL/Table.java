@@ -20,4 +20,11 @@ public class Table {
     public void setTable(ArrayList<Info> table) {
         this.table = table;
     }
+
+    @Override
+    public String toString() {
+        return "Table{" +
+                "table=" + table +
+                '}';
+    }
 }

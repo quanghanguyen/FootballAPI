@@ -78,6 +78,18 @@ public class Info {
     public void setTeam(Team team) {
         this.team = team;
     }
+
+    @Override
+    public String toString() {
+        return "Info{" +
+                "position=" + position +
+                ", won=" + won +
+                ", lost=" + lost +
+                ", points=" + points +
+                ", draw=" + draw +
+                ", team=" + team +
+                '}';
+    }
 }
 
 
