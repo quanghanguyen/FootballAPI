@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:id="@+id/rlitemTeams">
 
     <androidx.cardview.widget.CardView
         android:layout_centerVertical="true"
@@ -36,7 +37,7 @@
                 android:layout_toRightOf="@+id/civTeams"
                 android:text="@string/matchday"
                 android:textColor="@color/black"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

@@ -12,6 +12,28 @@ public class Data {
     @SerializedName("crestUrl")
     private String crestUrl;
 
+    @SerializedName("shortName")
+    private String shortName;
+
+    @SerializedName("tla")
+    private String tla;
+
+    @SerializedName("address")
+    private String address;
+
+    @SerializedName("phone")
+    private String phone;
+
+    @SerializedName("website")
+    private String website;
+
+    @SerializedName("email")
+    private String email;
+
+    private String founded;
+
+    private String venue;
+
     public Data(String name, String crestUrl) {
         this.name = name;
         this.crestUrl = crestUrl;

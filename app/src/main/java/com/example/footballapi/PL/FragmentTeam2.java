@@ -70,8 +70,10 @@ public class FragmentTeam2 extends Fragment {
                 Log.e(TAG, "onResponse: code : " + response.code());
 
                 ArrayList<Data> data = response.body().getTeams();
+
                 lstData.addAll(data);
                 adapter.notifyDataSetChanged();
+
                 for (Data data1 : data){
                     Log.e(TAG, "onResponse: code: " + data1.getName());
                     Log.e(TAG, "onResponse: code: " + data1.getCrestUrl());

@@ -1,10 +1,13 @@
 package com.example.footballapi.PL;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +25,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     Context mContext;
     List<Data> mData;
+    Dialog myDialog;
 
     public RecyclerViewAdapter(Context mContext, List<Data> mData) {
         this.mContext = mContext;
@@ -34,6 +38,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.list_teams, parent, false);
         MyViewHolder vHolder = new MyViewHolder(v);
+
+        //Dialog
+        myDialog = new Dialog(mContext);
+        myDialog.setContentView(R.layout.dialog_contact);
+
+
+        vHolder.itemTeams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tvNameDetails = (TextView) myDialog.findViewById(R.id.tvNameDetails);
+                TextView tvShortNameDetails = (TextView) myDialog.findViewById(R.id.tvShortNameDetails);
+                tvNameDetails.setText(mData.get(vHolder.getAdapterPosition()).getName());
+
+
+
+//                Toast.makeText(mContext, "Test Click" + String.valueOf(vHolder.getAbsoluteAdapterPosition()), Toast.LENGTH_SHORT).show();
+                myDialog.show();
+            }
+        });
+
         return vHolder;
 
 
@@ -58,6 +82,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
+        private RelativeLayout itemTeams;
         private TextView tvName2;
         private CircleImageView civTeams2;
 
@@ -65,6 +90,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            itemTeams = (RelativeLayout) itemView.findViewById(R.id.rlitemTeams);
             tvName2 = (TextView) itemView.findViewById(R.id.tvTeams);
             civTeams2 = (CircleImageView) itemView.findViewById(R.id.civTeams);
 
