@@ -35,6 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.list_teams, parent, false);
         MyViewHolder vHolder = new MyViewHolder(v);
@@ -73,8 +74,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
 
         return vHolder;
-
-
     }
 
     @Override

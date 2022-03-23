@@ -5,16 +5,20 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.footballapi.PL.RecyclerViewAdapter;
 import com.example.footballapi.R;
 
 import java.util.ArrayList;
 
-public class L1TeamsAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class L1TeamsAdapter extends RecyclerView.Adapter<L1TeamsAdapter.MyViewHolder> {
 
     Context mContext;
     ArrayList<L1TeamsModel> mL1TeamModel;
@@ -28,7 +32,7 @@ public class L1TeamsAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyV
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.list_teamsl1, parent, false);
@@ -38,19 +42,34 @@ public class L1TeamsAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+        holder.tvL1Name.setText(mL1TeamModel.get(position).getName());
+
+        Glide.with(mContext)
+                .load(mL1TeamModel.get(position).getCrestUrl())
+                .into(holder.civL1Teams);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mL1TeamModel.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
+        private TextView tvL1Name;
+        private CircleImageView civL1Teams;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            tvL1Name = (TextView) itemView.findViewById(R.id.tvTeamsL1);
+            civL1Teams = (CircleImageView) itemView.findViewById(R.id.civTeamsL1);
+
+
+
         }
     }
 
