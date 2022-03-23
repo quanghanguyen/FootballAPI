@@ -49,9 +49,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View view) {
                 TextView tvNameDetails = (TextView) myDialog.findViewById(R.id.tvNameDetails);
                 TextView tvShortNameDetails = (TextView) myDialog.findViewById(R.id.tvShortNameDetails);
+                TextView tvTLADetails = (TextView) myDialog.findViewById(R.id.tvTLADetails);
+                TextView tvAddressDetails = (TextView) myDialog.findViewById(R.id.tvAddressDetails);
+                TextView tvPhoneDetails = (TextView) myDialog.findViewById(R.id.tvPhoneDetails);
+                TextView tvWebsiteDetails = (TextView) myDialog.findViewById(R.id.tvWebsiteDetails);
+                TextView tvEmailDetails = (TextView) myDialog.findViewById(R.id.tvEmailDetails);
+                TextView tvFoundedDetails = (TextView) myDialog.findViewById(R.id.tvFoundedDetails);
+                TextView tvVenueDetails = (TextView) myDialog.findViewById(R.id.tvVenueDetails);
+
                 tvNameDetails.setText(mData.get(vHolder.getAdapterPosition()).getName());
-
-
+                tvShortNameDetails.setText(mData.get(vHolder.getAdapterPosition()).getShortName());
+                tvAddressDetails.setText(mData.get(vHolder.getAdapterPosition()).getAddress());
+                tvTLADetails.setText(mData.get(vHolder.getAdapterPosition()).getTla());
+                tvPhoneDetails.setText(mData.get(vHolder.getAdapterPosition()).getPhone());
+                tvWebsiteDetails.setText(mData.get(vHolder.getAdapterPosition()).getWebsite());
+                tvEmailDetails.setText(mData.get(vHolder.getAdapterPosition()).getEmail());
+                tvFoundedDetails.setText(mData.get(vHolder.getAdapterPosition()).getFounded());
+                tvVenueDetails.setText(mData.get(vHolder.getAdapterPosition()).getVenue());
 
 //                Toast.makeText(mContext, "Test Click" + String.valueOf(vHolder.getAbsoluteAdapterPosition()), Toast.LENGTH_SHORT).show();
                 myDialog.show();

@@ -28,6 +28,7 @@ public class FragmentTeam2 extends Fragment {
     private List<Data> lstData;
     private static final String TAG = "TeamFragment";
     private RecyclerViewAdapter adapter;
+
     public FragmentTeam2() {
     }
 

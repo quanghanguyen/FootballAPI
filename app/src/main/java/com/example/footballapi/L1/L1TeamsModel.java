@@ -1,10 +1,8 @@
-package com.example.footballapi.PL;
+package com.example.footballapi.L1;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-
-public class Data {
+public class L1TeamsModel {
 
     @SerializedName("name")
     private String name;
@@ -36,7 +34,8 @@ public class Data {
     @SerializedName("venue")
     private String venue;
 
-    public Data(String name, String crestUrl, String shortName, String tla, String address, String phone, String website, String email, String founded, String venue) {
+
+    public L1TeamsModel(String name, String crestUrl, String shortName, String tla, String address, String phone, String website, String email, String founded, String venue) {
         this.name = name;
         this.crestUrl = crestUrl;
         this.shortName = shortName;

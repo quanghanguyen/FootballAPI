@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlChartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvPositionTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvClubTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="70dp"
+            android:layout_toRightOf="@+id/tvPositionTitle"
+            android:gravity="center"
+            android:text="Club"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvWTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="75dp"
+            android:layout_toRightOf="@+id/tvClubTitle"
+            android:gravity="center"
+            android:text="W"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvWTitle"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvLTitle"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvDTitle"
+            android:gravity="center"
+            android:text="Pst"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlChartTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

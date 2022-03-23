@@ -31,8 +31,6 @@ public class Home2 extends AppCompatActivity {
 
         viewPagerAdapter2.AddFragment(new FragmentTeam2(), "Team");
         viewPagerAdapter2.AddFragment(new FragmentChart2(), "Chart");
-
-
         viewPager.setAdapter(viewPagerAdapter2);
         tabLayout.setupWithViewPager(viewPager);
     }

@@ -7,17 +7,20 @@
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_demo.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_home.xml" value="0.18" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_home2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_home_l1.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_pager_pl.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
-        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/chart2_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/chart2_fragment.xml" value="0.22" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/demo.xml" value="0.20102564102564102" />
-        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/dialog_contact.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/dialog_contact.xml" value="0.22" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_charts.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_team.xml" value="0.19010416666666666" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_team_l1.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_chart.xml" value="0.22" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_home.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_teams.xml" value="0.22" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_teamsl1.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/team2_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
       </map>

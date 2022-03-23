@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.footballapi.BL.ApiService3;
 import com.example.footballapi.L1.ApiService2;
+import com.example.footballapi.L1.HomeL1;
 import com.example.footballapi.PL.ApiService;
 import com.example.footballapi.PL.Home2;
 import com.example.footballapi.PL.PLModel;
@@ -115,6 +116,19 @@ public class Home extends AppCompatActivity {
 
         //set on click
         clickPL();
+        clickL1();
+
+    }
+
+    private void clickL1() {
+
+        cvL1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, HomeL1.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

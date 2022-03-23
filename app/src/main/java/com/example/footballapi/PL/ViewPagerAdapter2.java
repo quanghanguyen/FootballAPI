@@ -40,17 +40,7 @@ public class ViewPagerAdapter2 extends FragmentPagerAdapter {
         lstFragment.add(fragment);
         lstTitle.add(title);
 
-
-
     }
-
-
-
-
-
-
-
-
 
 
 }
