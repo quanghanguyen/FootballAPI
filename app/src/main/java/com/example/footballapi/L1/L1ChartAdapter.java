@@ -41,6 +41,11 @@ public class L1ChartAdapter extends RecyclerView.Adapter<L1ChartAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         holder.tvL1Position.setText(String.valueOf(mChartInfo.get(position).getPosition()));
+        holder.tvL1P.setText(String.valueOf(mChartInfo.get(position).getPoints()));
+        holder.tvL1W.setText(String.valueOf(mChartInfo.get(position).getWon()));
+        holder.tvL1D.setText(String.valueOf(mChartInfo.get(position).getDraw()));
+        holder.tvL1L.setText(String.valueOf(mChartInfo.get(position).getLost()));
+        holder.tvL1NameTeam.setText(String.valueOf(mChartInfo.get(position).getTeam().getName()));
 
         Glide.with(mContext).
                 load(mChartInfo.get(position).getTeam().getCrestUrl())
