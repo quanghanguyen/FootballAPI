@@ -7,8 +7,10 @@ import java.util.ArrayList;
 public class Standings {
     @SerializedName("standings")
     private ArrayList<Table> Standing;
+
     @SerializedName("message")
     private String message;
+
     @SerializedName("errorCode")
     private int errorCode;
     public ArrayList<com.example.footballapi.PL.Table> getStanding() {

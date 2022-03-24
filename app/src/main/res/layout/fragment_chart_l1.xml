@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".L1.FragmentChartL1">
+    android:background="@android:color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rlL1ChartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvL1PositionTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvL1ClubTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="70dp"
+            android:layout_toRightOf="@+id/tvL1PositionTitle"
+            android:gravity="center"
+            android:text="Club"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvL1WTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="75dp"
+            android:layout_toRightOf="@+id/tvL1ClubTitle"
+            android:gravity="center"
+            android:text="W"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvL1LTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvL1WTitle"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvL1DTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvL1LTitle"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvL1PTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvL1DTitle"
+            android:gravity="center"
+            android:text="Pst"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvL1Chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/rlL1ChartTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp">
 
-</FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

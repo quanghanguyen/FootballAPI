@@ -23,6 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FragmentChart2 extends Fragment {
+
     private RecyclerViewAdapter2 adapter2;
     View v;
     private RecyclerView myrecyclerview2;

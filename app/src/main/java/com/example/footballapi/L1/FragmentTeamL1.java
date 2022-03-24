@@ -74,9 +74,5 @@ public class FragmentTeamL1 extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(l1TeamsAdapter);
         return v;
-
-
-
-//        return inflater.inflate(R.layout.fragment_team_l1, container, false);
     }
 }
