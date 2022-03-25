@@ -31,6 +31,5 @@ public class BLActivity extends AppCompatActivity {
         vpBL.setAdapter(viewPagerAdapterBL);
         tlBL.setupWithViewPager(vpBL);
 
-
     }
 }
