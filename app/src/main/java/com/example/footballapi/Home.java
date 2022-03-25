@@ -2,32 +2,23 @@ package com.example.footballapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.footballapi.BL.ApiService3;
+import com.example.footballapi.BL.BLActivity;
 import com.example.footballapi.L1.ApiService2;
 import com.example.footballapi.L1.HomeL1;
 import com.example.footballapi.PL.ApiService;
 import com.example.footballapi.PL.Home2;
 import com.example.footballapi.PL.PLModel;
 import com.example.footballapi.PL.RetrofitClient;
-import com.example.footballapi.PL.pagerPL;
 import com.example.footballapi.SA.ApiService4;
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -117,6 +108,19 @@ public class Home extends AppCompatActivity {
         //set on click
         clickPL();
         clickL1();
+        clickBL();
+
+    }
+
+    private void clickBL() {
+
+        cvBL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, BLActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

@@ -78,9 +78,6 @@ public class L1ChartAdapter extends RecyclerView.Adapter<L1ChartAdapter.MyViewHo
             tvL1D = (TextView) itemView.findViewById(R.id.tvL1D);
             tvL1P = (TextView) itemView.findViewById(R.id.tvL1P);
             civL1TeamIcon = (CircleImageView) itemView.findViewById(R.id.civL1TeamIcon);
-
-
-
         }
     }
 }

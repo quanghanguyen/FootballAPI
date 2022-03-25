@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BL.FragmentChartBL"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlBLChartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvBLPositionTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBLClubTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="70dp"
+            android:layout_toRightOf="@+id/tvBLPositionTitle"
+            android:gravity="center"
+            android:text="Club"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBLWTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="75dp"
+            android:layout_toRightOf="@+id/tvBLClubTitle"
+            android:gravity="center"
+            android:text="W"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBLLTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvBLWTitle"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBLDTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvBLLTitle"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvBLPTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvBLDTitle"
+            android:gravity="center"
+            android:text="Pst"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvBLChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlBLChartTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</RelativeLayout>

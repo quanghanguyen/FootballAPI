@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey">
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvL1Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -21,21 +22,21 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvNameDetails"
+            android:id="@+id/tvL1NameDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/tvName"
+            android:layout_toRightOf="@+id/tvL1Name"
             android:text="Aston Villa FC"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvShortName"
+            android:id="@+id/tvL1ShortName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvName"
+            android:layout_below="@+id/tvL1Name"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="ShortName:"
@@ -43,22 +44,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvShortNameDetails"
+            android:id="@+id/tvL1ShortNameDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvName"
+            android:layout_below="@+id/tvL1Name"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvShortName"
+            android:layout_toRightOf="@+id/tvL1ShortName"
             android:text="Aston Villa"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvTLA"
+            android:id="@+id/tvL1TLA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvShortName"
+            android:layout_below="@+id/tvL1ShortName"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="TLA:"
@@ -66,22 +67,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvTLADetails"
+            android:id="@+id/tvL1TLADetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvShortName"
+            android:layout_below="@id/tvL1ShortName"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvTLA"
+            android:layout_toRightOf="@+id/tvL1TLA"
             android:text="1"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvAddress"
+            android:id="@+id/tvL1Address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTLA"
+            android:layout_below="@+id/tvL1TLA"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="Address:"
@@ -89,22 +90,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvAddressDetails"
+            android:id="@+id/tvL1AddressDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTLA"
+            android:layout_below="@+id/tvL1TLA"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvAddress"
+            android:layout_toRightOf="@+id/tvL1Address"
             android:text="1"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvPhone"
+            android:id="@+id/tvL1Phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvAddress"
+            android:layout_below="@+id/tvL1Address"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="Phone:"
@@ -112,22 +113,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvPhoneDetails"
+            android:id="@+id/tvL1PhoneDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvAddress"
+            android:layout_below="@+id/tvL1Address"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvPhone"
+            android:layout_toRightOf="@+id/tvL1Phone"
             android:text="3"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvWebsite"
+            android:id="@+id/tvL1Website"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvPhone"
+            android:layout_below="@+id/tvL1Phone"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="Website:"
@@ -135,22 +136,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvWebsiteDetails"
+            android:id="@+id/tvL1WebsiteDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvPhone"
+            android:layout_below="@+id/tvL1Phone"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvWebsite"
+            android:layout_toRightOf="@+id/tvL1Website"
             android:text="5"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvEmail"
+            android:id="@+id/tvL1Email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvWebsite"
+            android:layout_below="@+id/tvL1Website"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="Email:"
@@ -158,22 +159,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvEmailDetails"
+            android:id="@+id/tvL1EmailDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvWebsite"
+            android:layout_below="@+id/tvL1Website"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvEmail"
+            android:layout_toRightOf="@+id/tvL1Email"
             android:text="5"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvFounded"
+            android:id="@+id/tvL1Founded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvEmail"
+            android:layout_below="@+id/tvL1Email"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="Founded:"
@@ -181,22 +182,22 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvFoundedDetails"
+            android:id="@+id/tvL1FoundedDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvEmail"
+            android:layout_below="@+id/tvL1Email"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:layout_toRightOf="@+id/tvFounded"
+            android:layout_toRightOf="@+id/tvL1Founded"
             android:text="5"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/tvVenue"
+            android:id="@+id/tvL1Venue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvFounded"
+            android:layout_below="@+id/tvL1Founded"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:text="Venue:"
@@ -205,14 +206,14 @@
             android:layout_marginBottom="10dp"/>
 
         <TextView
-            android:id="@+id/tvVenueDetails"
+            android:id="@+id/tvL1VenueDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvFounded"
+            android:layout_below="@+id/tvL1Founded"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@+id/tvVenue"
+            android:layout_toRightOf="@+id/tvL1Venue"
             android:text="5"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
