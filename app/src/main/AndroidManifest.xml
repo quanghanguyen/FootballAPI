@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FootballAPI">
         <activity
+            android:name=".SA.SAHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".BL.BLActivity"
             android:exported="false" />
         <activity

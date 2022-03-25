@@ -19,6 +19,7 @@ import com.example.footballapi.PL.Home2;
 import com.example.footballapi.PL.PLModel;
 import com.example.footballapi.PL.RetrofitClient;
 import com.example.footballapi.SA.ApiService4;
+import com.example.footballapi.SA.SAHomeActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -109,6 +110,19 @@ public class Home extends AppCompatActivity {
         clickPL();
         clickL1();
         clickBL();
+        clickSA();
+
+    }
+
+    private void clickSA() {
+
+        cvSA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, SAHomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
