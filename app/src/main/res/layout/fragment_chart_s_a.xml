@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SA.FragmentChartSA">
+    tools:context=".BL.FragmentChartBL"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rlSAChartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_red_light"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvSAPositionTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="#"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSAClubTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="70dp"
+            android:layout_toRightOf="@+id/tvSAPositionTitle"
+            android:gravity="center"
+            android:text="Club"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSAWTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="75dp"
+            android:layout_toRightOf="@+id/tvSAClubTitle"
+            android:gravity="center"
+            android:text="W"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSALTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvSAWTitle"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSADTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvSALTitle"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvSAPTitle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_toRightOf="@+id/tvSADTitle"
+            android:gravity="center"
+            android:text="Pst"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvSAChart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/rlSAChartTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp">
 
-</FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</RelativeLayout>

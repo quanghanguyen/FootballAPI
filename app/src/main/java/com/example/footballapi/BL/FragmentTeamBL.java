@@ -51,6 +51,7 @@ public class FragmentTeamBL extends Fragment {
         call.enqueue(new Callback<BLTeamsModelArrayList>() {
             @Override
             public void onResponse(Call<BLTeamsModelArrayList> call, Response<BLTeamsModelArrayList> response) {
+
                 ArrayList<BLTeamsModel> blTeamsModels = response.body().getTeams();
                 lstBLTeamsModel.addAll(blTeamsModels);
                 blTeamsAdapter.notifyDataSetChanged();

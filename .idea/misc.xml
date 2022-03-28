@@ -18,8 +18,10 @@
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/dialog_contact.xml" value="0.22" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/dialog_contact_bl.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/dialog_contact_l1.xml" value="0.25" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/dialog_contact_sa.xml" value="0.17222222222222222" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_chart_b_l.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_chart_l1.xml" value="0.20416666666666666" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_chart_s_a.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_charts.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_team.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/fragment_team_b_l.xml" value="0.20416666666666666" />
@@ -29,6 +31,7 @@
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_chart.xml" value="0.22" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_home.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_l1chart.xml" value="0.25" />
+        <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_sa_chart.xml" value="0.2" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_team_sa.xml" value="0.20416666666666666" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_teams.xml" value="0.22" />
         <entry key="..\:/Desktop D/learn/FootballAPI/app/src/main/res/layout/list_teams_bl.xml" value="0.20416666666666666" />

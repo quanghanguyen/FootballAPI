@@ -1,9 +1,11 @@
 package com.example.footballapi.SA;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,7 +22,7 @@ public class SATeamAdapter extends RecyclerView.Adapter<SATeamAdapter.MyViewHold
 
     Context mContext;
     ArrayList<SATeamsModel> saTeamsModels;
-    //Dialog
+    Dialog dialog;
 
 
     public SATeamAdapter(Context mContext, ArrayList<SATeamsModel> saTeamsModels) {
@@ -36,7 +38,40 @@ public class SATeamAdapter extends RecyclerView.Adapter<SATeamAdapter.MyViewHold
         v = LayoutInflater.from(mContext).inflate(R.layout.list_team_sa, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(v);
 
-        return null;
+        //------------
+        dialog = new Dialog(mContext);
+        dialog.setContentView(R.layout.dialog_contact_sa);
+
+        viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tvSANameDetails = (TextView) dialog.findViewById(R.id.tvSANameDetails);
+                TextView tvSAShortNameDetails = (TextView) dialog.findViewById(R.id.tvSAShortNameDetails);
+                TextView tvSATLADetails = (TextView) dialog.findViewById(R.id.tvSATLADetails);
+                TextView tvSAAddressDetails = (TextView) dialog.findViewById(R.id.tvSAAddressDetails);
+                TextView tvSAPhoneDetails = (TextView) dialog.findViewById(R.id.tvSAPhoneDetails);
+                TextView tvSAWebsiteDetails = (TextView) dialog.findViewById(R.id.tvSAWebsiteDetails);
+                TextView tvSAEmailDetails = (TextView) dialog.findViewById(R.id.tvSAEmailDetails);
+                TextView tvSAFoundedDetails = (TextView) dialog.findViewById(R.id.tvSAFoundedDetails);
+                TextView tvSAVenueDetails = (TextView) dialog.findViewById(R.id.tvSAVenueDetails);
+
+                //--------------------------------------------------
+
+                tvSANameDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getName());
+                tvSAShortNameDetails.setText(saTeamsModels.get(viewHolder.getAbsoluteAdapterPosition()).getShortName());
+                tvSATLADetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getTla());
+                tvSAAddressDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getAddress());
+                tvSAPhoneDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getPhone());
+                tvSAWebsiteDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getWebsite());
+                tvSAEmailDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getEmail());
+                tvSAFoundedDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getFounded());
+                tvSAVenueDetails.setText(saTeamsModels.get(viewHolder.getAdapterPosition()).getVenue());
+
+                dialog.show();
+            }
+        });
+
+        return viewHolder;
     }
 
     @Override
@@ -45,7 +80,7 @@ public class SATeamAdapter extends RecyclerView.Adapter<SATeamAdapter.MyViewHold
         holder.tvSAName.setText(saTeamsModels.get(position).getName());
 
         Glide.with(mContext)
-                .load(saTeamsModels.get(position))
+                .load(saTeamsModels.get(position).getCrestUrl())
                 .into(holder.civSATeams);
 
     }
@@ -59,12 +94,14 @@ public class SATeamAdapter extends RecyclerView.Adapter<SATeamAdapter.MyViewHold
 
         private TextView tvSAName;
         private CircleImageView civSATeams;
+        private RelativeLayout relativeLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvSAName = (TextView) itemView.findViewById(R.id.tvTeamsBL);
+            tvSAName = (TextView) itemView.findViewById(R.id.tvTeamsSA);
             civSATeams = (CircleImageView) itemView.findViewById(R.id.civTeamsSA);
+            relativeLayout = (RelativeLayout) itemView.findViewById(R.id.rlitemTeamsSA);
         }
     }
 }

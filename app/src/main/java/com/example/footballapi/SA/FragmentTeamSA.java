@@ -51,6 +51,7 @@ public class FragmentTeamSA extends Fragment {
         call.enqueue(new Callback<SATeamModelArrayList>() {
             @Override
             public void onResponse(Call<SATeamModelArrayList> call, Response<SATeamModelArrayList> response) {
+
                 ArrayList<SATeamsModel> saTeamsModels = response.body().getTeams();
                 lstSATeamsModel.addAll(saTeamsModels);
                 saTeamAdapter.notifyDataSetChanged();

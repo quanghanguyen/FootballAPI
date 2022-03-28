@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey">
+
+        <TextView
+            android:id="@+id/tvSAName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Name:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSANameDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tvSAName"
+            android:text="Aston Villa FC"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAShortName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="ShortName:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAShortNameDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSAShortName"
+            android:text="Aston Villa"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSATLA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAShortName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="TLA:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSATLADetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvSAShortName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSATLA"
+            android:text="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSATLA"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Address:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAAddressDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSATLA"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSAAddress"
+            android:text="1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAAddress"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Phone:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAPhoneDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAAddress"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSAPhone"
+            android:text="3"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAPhone"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Website:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAWebsiteDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAPhone"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSAWebsite"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAWebsite"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Email:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAEmailDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAWebsite"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSAEmail"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAFounded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAEmail"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:text="Founded:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAFoundedDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAEmail"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_toRightOf="@+id/tvSAFounded"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAVenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAFounded"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            android:text="Venue:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvSAVenueDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvSAFounded"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/tvSAVenue"
+            android:text="5"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
